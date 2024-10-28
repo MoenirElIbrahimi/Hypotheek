@@ -1,4 +1,4 @@
-package nl.rocnijmegen.testing;
+package nl.rocnijmegen;
 
 public class HypotheekService {
     private final HypotheekBerekening hypotheekBerekening;

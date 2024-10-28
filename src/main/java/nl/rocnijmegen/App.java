@@ -1,4 +1,4 @@
-package nl.rocnijmegen.testing;
+package nl.rocnijmegen;
 
 public class App {
 
@@ -6,6 +6,14 @@ public class App {
 
         InputVerwerking inputVerwerking = new InputVerwerking();
         HypotheekService hypotheekService = new HypotheekService();
+        PostcodeChecker postcodeChecker = new PostcodeChecker(); // Maak een instantie van PostcodeChecker
+
+        // Controleer de postcode
+        int postcode = postcodeChecker.postcode();
+        if (postcode == -1) {
+            System.out.println("De ingevoerde postcode is ongeldig. De applicatie wordt beëindigd.");
+            return; // Stop de applicatie als de postcode ongeldig is
+        }
 
         // Vraag het inkomen van de klant
         double inkomen = inputVerwerking.vraagInkomen("uzelf");
